@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Solution - Feature Cards</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #0f172a; /* Slate 900 */
+      }
+      .slide-container {
+        width: 1280px;
+        height: 720px;
+        background-color: #0f172a;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .grid-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(
+            to right,
+            #1e293b 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.15;
+        z-index: 0;
+      }
+      .feature-card {
+        background-color: #1e293b; /* Slate 800 */
+        border: 1px solid #334155; /* Slate 700 */
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+        border-color: #3b82f6; /* Blue 500 */
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      }
+      .icon-box {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+      /* No gradients allowed */
+      .accent-line {
+        width: 100%;
+        height: 1px;
+        background-color: #334155;
+        margin: 16px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container text-white">
+      <!-- Background elements -->
+      <div class="grid-bg"></div>
+      <!-- Decorative Circle (Solid Color) -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-blue-900 rounded-full opacity-10 filter blur-3xl transform translate-x-1/3 -translate-y-1/3"
+      ></div>
+      <!-- Header Section -->
+      <div
+        class="relative z-10 px-12 pt-10 pb-6 flex justify-between items-end border-b border-slate-800 bg-slate-900 bg-opacity-80"
+      >
+        <div>
+          <div class="flex items-center space-x-2 mb-2">
+            <span
+              class="px-2 py-1 bg-blue-900 bg-opacity-50 border border-blue-700 rounded text-xs text-blue-300 font-semibold uppercase tracking-wider"
+              >The Solution</span
+            >
+          </div>
+          <h2 class="text-4xl font-bold text-white tracking-tight">
+            AI-Powered Property Search Agent
+          </h2>
+        </div>
+        <div class="max-w-xl text-right">
+          <p class="text-slate-300 text-lg font-light leading-snug">
+            An intelligent orchestrator that connects natural language questions
+            to
+            <span class="text-blue-400 font-medium"
+              >verifiable, structured data</span
+            >.
+          </p>
+        </div>
+      </div>
+      <!-- Main Content Area -->
+      <div class="relative z-10 flex-1 px-12 py-8 flex flex-col justify-center">
+        <!-- Features Grid -->
+        <div class="grid grid-cols-3 gap-6 h-full">
+          <!-- Feature 1: Conversational Interface -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-blue-900 bg-opacity-30 text-blue-400">
+                <i class="fa-solid fa-comments text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">01</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Conversational Interface
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Empowers users to ask questions like a human (e.g., "What's the
+                zoning &amp; lot size?"). No complex forms required.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 2: Intelligent Orchestrator -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-indigo-900 bg-opacity-30 text-indigo-400">
+                <i class="fa-solid fa-brain text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">02</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Intelligent Orchestrator
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                The AI agent acts as a controller, not the source of truth. It
+                understands intent and delegates tasks to specialized tools.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 3: Deterministic Data -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-green-900 bg-opacity-30 text-green-400">
+                <i class="fa-solid fa-database text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">03</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Deterministic Routing
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Every query is routed to authoritative data sources (SQL
+                Databases, GIS tools) to ensure factual accuracy.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 4: Validation & Governance -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-yellow-900 bg-opacity-30 text-yellow-400">
+                <i class="fa-solid fa-shield-halved text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">04</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Validation Governance
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Strict logic layers apply governance rules to verify data
+                integrity before any answer is presented to the user.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 5: Structured Outputs -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-teal-900 bg-opacity-30 text-teal-400">
+                <i class="fa-solid fa-table-columns text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">05</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Structured Results
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Responses are returned as UI-ready cards, tables, and maps,
+                seamlessly integrating with CRM and brokerage workflows.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 6: Uncertainty Handling -->
+          <div class="feature-card rounded-xl p-6 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div class="icon-box bg-red-900 bg-opacity-30 text-red-400">
+                <i class="fa-solid fa-scale-balanced text-xl"></i>
+              </div>
+              <span class="text-xs text-slate-500 font-mono">06</span>
+            </div>
+            <div class="mt-4">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Uncertainty Handling
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Eliminates guessing. If data doesn't exist or is ambiguous, the
+                system clearly states the limitation instead of hallucinating.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div
+        class="relative z-10 px-12 py-4 flex justify-between items-center text-slate-500 text-xs border-t border-slate-800 bg-slate-900"
+      >
+        <p>PropTech Intelligence Platform</p>
+        <div class="flex items-center space-x-4">
+          <span class="px-2 py-1 bg-slate-800 rounded">Slide 3 / 5</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

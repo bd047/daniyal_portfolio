@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Results &amp; ROI</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: #0f172a;
+        overflow: hidden;
+        font-family: "Inter", sans-serif;
+      }
+
+      .stage {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: #0f172a;
+      }
+
+      .slide {
+        width: 1280px;
+        height: 720px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transform-origin: top left;
+        background: #0f172a;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+            to right,
+            #1e293b 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.12;
+        z-index: 0;
+      }
+
+      .card {
+        background: rgba(30, 41, 59, 0.66);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 16px;
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.28);
+      }
+
+      .pill {
+        border-radius: 999px;
+        border: 1px solid rgba(16, 185, 129, 0.35);
+        background: rgba(6, 78, 59, 0.35);
+      }
+
+      /* tighter grid so all 6 cards feel balanced */
+      .roi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px; /* was larger */
+      }
+
+      .muted {
+        color: rgba(148, 163, 184, 0.92);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="stage">
+      <div class="slide text-white" id="slide">
+        <div class="grid-bg"></div>
+
+        <!-- Header -->
+        <div class="relative z-10 px-12 pt-9 flex items-start justify-between">
+          <div>
+            <div
+              class="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider pill text-emerald-200"
+            >
+              Business Impact
+            </div>
+
+            <h1 class="text-5xl font-extrabold tracking-tight mt-3">
+              Results & Value Delivered
+            </h1>
+          </div>
+
+          <div class="text-right mt-8">
+            <p class="text-lg font-semibold text-slate-200">
+              Delivering speed, trust, and scalability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex-1 px-12 pt-7 pb-9">
+          <div class="roi-grid h-full">
+            <!-- TOP ROW: slightly smaller cards -->
+            <!-- 1: Research Velocity -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-blue-300"
+                >
+                  <i class="fa-solid fa-bolt text-lg"></i>
+                </div>
+                <span
+                  class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-900 bg-opacity-40 border border-blue-700 text-blue-200"
+                >
+                  Efficiency
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Research Velocity</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                Complex property inquiries that formerly took hours are now
+                resolved instantly.
+              </p>
+
+              <div class="mt-5 space-y-3">
+                <div class="flex justify-between text-xs text-slate-300">
+                  <span class="font-semibold">BEFORE</span>
+                  <span class="font-semibold">~2–4 Hours</span>
+                </div>
+                <div class="w-full h-px bg-slate-700 opacity-60"></div>
+                <div class="flex justify-between text-xs text-emerald-300">
+                  <span class="font-semibold">WITH AI AGENT</span>
+                  <span class="font-semibold">&lt; 10 Seconds</span>
+                </div>
+                <div
+                  class="w-7 h-2 bg-emerald-400 rounded-full opacity-70"
+                ></div>
+              </div>
+
+              <div class="mt-auto"></div>
+            </div>
+
+            <!-- 2: Agent Productivity -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-indigo-300"
+                >
+                  <i class="fa-solid fa-briefcase text-lg"></i>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Agent Productivity</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                Routine data gathering is fully automated, freeing up talent to
+                focus on negotiation and high-value client relationships.
+              </p>
+
+              <div class="mt-5 w-full h-px bg-slate-700 opacity-60"></div>
+
+              <div class="mt-4 flex items-end space-x-3">
+                <i
+                  class="fa-solid fa-arrow-trend-up text-emerald-400 text-base"
+                ></i>
+                <div>
+                  <div class="text-4xl font-extrabold text-white leading-none">
+                    40%
+                  </div>
+                  <div class="text-sm text-slate-300 tracking-wide uppercase">
+                    Capacity Increase
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-auto"></div>
+            </div>
+
+            <!-- 3: Customer Experience -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-slate-100"
+                >
+                  <i class="fa-solid fa-comment-dots text-lg"></i>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Customer Experience</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                Zero-friction journey. Instant answers replace wait times,
+                directly improving lead qualification and conversion rates.
+              </p>
+
+              <div class="mt-auto pt-4 flex items-center space-x-2">
+                <div class="text-yellow-400 text-sm">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="text-xs text-yellow-300"
+                  >(Client Satisfaction)</span
+                >
+              </div>
+            </div>
+
+            <!-- BOTTOM ROW: keep same but slightly tighter -->
+            <!-- 4: Trust & Auditability -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-rose-300"
+                >
+                  <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Trust &amp; Auditability</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                Verifiable outputs reduce liability risk compared to “black box”
+                AI. Every data point is traceable to an official source.
+              </p>
+
+              <div class="mt-auto"></div>
+            </div>
+
+            <!-- 5: Scalable Foundation -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-purple-300"
+                >
+                  <i class="fa-solid fa-map-location-dot text-lg"></i>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Scalable Foundation</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                Modular architecture supports rapid expansion into new
+                geographic regions or the addition of new datasets (e.g., flood,
+                solar).
+              </p>
+
+              <div class="mt-auto"></div>
+            </div>
+
+            <!-- 6: Integration Ready -->
+            <div class="card p-5 flex flex-col">
+              <div class="flex items-start justify-between">
+                <div
+                  class="w-11 h-11 rounded-xl bg-slate-900 bg-opacity-60 flex items-center justify-center text-slate-200"
+                >
+                  <i class="fa-solid fa-code text-lg"></i>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold mt-4">Integration Ready</h3>
+              <p class="muted text-sm mt-2 leading-relaxed">
+                API-first design enables seamless embedding into existing CRM
+                dashboards, brokerage portals, or MLS/IDX feeds.
+              </p>
+
+              <div class="mt-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+          class="relative z-10 px-12 py-5 flex justify-between items-center text-slate-500 text-xs border-t border-slate-800 bg-slate-900 bg-opacity-40"
+        >
+          <p>
+            AI-Powered Real Estate Search &amp; Property Intelligence Platform
+          </p>
+          <span class="px-2 py-1 bg-slate-800 rounded">Slide 5 / 5</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const SLIDE_W = 1280;
+      const SLIDE_H = 720;
+
+      function fitSlide() {
+        const slide = document.getElementById("slide");
+        const vv = window.visualViewport;
+
+        const vw = vv ? vv.width : document.documentElement.clientWidth;
+        const vh = vv ? vv.height : document.documentElement.clientHeight;
+
+        const margin = 70; // safe screenshot margin
+        const scale = Math.min(
+          (vw - margin) / SLIDE_W,
+          (vh - margin) / SLIDE_H
+        );
+
+        slide.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      }
+
+      window.addEventListener("load", fitSlide);
+      window.addEventListener("resize", fitSlide);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", fitSlide);
+        window.visualViewport.addEventListener("scroll", fitSlide);
+      }
+    </script>
+  </body>
+</html>

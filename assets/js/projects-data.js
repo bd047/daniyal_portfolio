@@ -163,6 +163,68 @@ const projectsData = {
      🤖 AI AGENTS
   =============================== */
 
+  propertyIntelligence: {
+    title: "AI-Powered Real Estate Search & Property Intelligence Platform",
+    category: "AI Agents",
+    image:
+      "./assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/master.png",
+
+    overview:
+      "Zero-hallucination property intelligence agent that answers natural-language questions with verifiable GIS + assessment data in seconds.",
+
+    description: `
+Built an AI agent-powered real estate automation platform that lets users ask natural language questions about any property and get instant, verifiable answers — without hallucinations. Instead of letting an LLM “guess,” I designed a tool-first orchestration layer that routes each query to deterministic data sources (PostgreSQL/PostGIS + GIS datasets) and returns schema-validated structured outputs ready for UI rendering.
+<br><br>
+The system performs address standardization and high-precision geocoding (with confidence thresholds + caching), then executes authoritative queries across assessment databases, zoning/land-use polygons, school catchment boundaries, transit proximity (GTFS), and census-driven neighborhood demographics. When multiple matches exist, the agent triggers disambiguation instead of guessing; when data is missing, it responds with explicit uncertainty.
+<br><br>
+I delivered a production-ready FastAPI backend with a modular tool library (address intelligence, property/assessment, GIS, demographics), automated ingestion pipelines for dataset updates, and a validation test suite to ensure ongoing accuracy. Outputs are returned as structured cards/tables/map-ready payloads that can integrate into CRM/brokerage workflows and extend to MLS/IDX in future iterations.
+`,
+
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "PostGIS",
+      "GIS (Shapefiles / Spatial Data)",
+      "GTFS Transit Feeds",
+      "Google Maps Geocoding API",
+      "Census / Demographics Data (StatsCan)",
+      "SQL",
+      "Spatial Indexing",
+      "Caching",
+      "React / Next.js (Demo UI)",
+    ],
+
+    features: [
+      "Tool-first, zero-hallucination AI agent orchestration",
+      "Address normalization + geocoding with confidence checks + caching",
+      "Deterministic PostGIS queries for zoning, boundaries, and proximity search",
+      "School catchment + transit + amenities distance/radius analytics",
+      "Demographic profiling using census/tract/dissemination-area data",
+      "Schema validation + disambiguation protocols (never guess on ambiguity)",
+      "API-first outputs (cards/tables/map-ready) for CRM/brokerage integration",
+      "Automated data ingestion pipelines + validation test suite",
+    ],
+
+    functionalities: [
+      "Ask questions like: zoning, lot size, assessed value, build year, taxes, comps",
+      "Radius-based market analysis (e.g., avg values within 250m)",
+      "Boundary lookups (zoning district, school catchment, service areas)",
+      "Transit/amenity proximity queries (bus stops within 500m, nearest station)",
+      "Return structured, auditable answers with explicit uncertainty handling",
+      "Expose REST APIs for embedding into PropTech platforms and internal tools",
+    ],
+
+    // ✅ Add project images carousel (update paths to your real images)
+    images: [
+      "assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/master.PNG",
+      "assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/problems.PNG",
+      "assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/solution.PNG",
+      "assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/methodology.PNG",
+      "assets/images/AI-Powered Real Estate Search & Property Intelligence Platform/results.PNG",
+    ],
+  },
+
   mentorshipMatch: {
     title: "Medical Mentorship Matchmaking Platform",
     category: "AI Agents",
